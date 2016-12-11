@@ -1,5 +1,11 @@
 # aur
-Pacaur Package Manager helper
+ArchLinux Package Manager helper
+
+support:
+
+- pacman
+- pacaur
+
 
 ## Install
 
