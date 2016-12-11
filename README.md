@@ -10,6 +10,8 @@ support:
 ## Install
 
     curl -L "https://raw.githubusercontent.com/avelino/aur/master/aur" -o /usr/local/bin/aur
+    chmod +x /usr/local/bin/aur
+    aur version
 
 
 ## Used
