@@ -1,27 +1,32 @@
 #!/bin/bash
+if which pacaur >/dev/null; then
+	AUR="pacaur"
+else
+	AUR="pacman"
+fi
 case $1 in
     "clear" | "clean")
-		pacaur -Sc
+		$AUR -Sc
 		;;
     "ls" | "list" | "freeze")
-		pacaur -Q
+		$AUR -Q
 		;;
     "up" | "upgrade" | "update")
-		pacaur -Suy
+		$AUR -Suy
 		;;
     "search")
 		shift
-		pacaur -Ss $@
+		$AUR -Ss $@
 		;;
     "install")
 		shift
-		pacaur -S $@
+		$AUR -S $@
 		;;
     "rm" | "remove" | "delete")
 		shift
-		pacaur -R $@
+		$AUR -R $@
 		;;
     *)
-		pacaur $@
+		$AUR $@
 		;;
 esac
