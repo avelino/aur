@@ -1,0 +1,27 @@
+#!/bin/bash
+case $1 in
+    "clear" | "clean")
+		pacaur -Sc
+		;;
+    "ls" | "list" | "freeze")
+		pacaur -Q
+		;;
+    "up" | "upgrade" | "update")
+		pacaur -Suy
+		;;
+    "search")
+		shift
+		pacaur -Ss $@
+		;;
+    "install")
+		shift
+		pacaur -S $@
+		;;
+    "rm" | "remove" | "delete")
+		shift
+		pacaur -R $@
+		;;
+    *)
+		pacaur $@
+		;;
+esac
