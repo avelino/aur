@@ -1,5 +1,5 @@
 # aur
-Package Manager helper pacaur
+Pacaur Package Manager helper
 
 ## Install
 
