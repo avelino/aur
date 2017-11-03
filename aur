@@ -1,45 +1,54 @@
 #!/bin/bash
 VERSION=0.1.2
 if which pacaur >/dev/null; then
-	AUR="pacaur"
+    AUR="pacaur"
 else
-	AUR="pacman"
+    AUR="pacman"
 fi
 case $1 in
     "version")
-		echo "aur helper version ${VERSION}"
-		;;
+	shift
+	echo "aur helper version ${VERSION}"
+	;;
     "clear" | "clean")
-		$AUR -Sc
-		;;
+	shift
+	$AUR -Sc
+	;;
     "ls" | "list" | "freeze")
-		$AUR -Q
-		;;
+	shift
+	$AUR -Q
+	;;
     "up" | "upgrade" | "update")
-		$AUR -Suy
-		;;
+	shift
+	$AUR -Suy
+	;;
     "search")
-		shift
-		$AUR -Ss $@
+	shift
+	$AUR -Ss $@
 		;;
     "install")
-		shift
-		$AUR -S $@
-		;;
+	shift
+	$AUR -S $@
+	;;
     "rm" | "remove" | "delete")
-		shift
-		$AUR -R $@
-		;;
+	shift
+	$AUR -R $@
+	;;
     "info")
-		shift
-		$AUR -Si $@
-		;;
+	shift
+	$AUR -Si $@
+	;;
     "bin_refresh")
-		shift
-		sudo curl -L "https://raw.githubusercontent.com/avelino/aur/master/aur" -o /usr/local/bin/aur && \
-		sudo chmod +x /usr/local/bin/aur
-		;;
+	shift
+	if which sudo >/dev/null && which curl >/dev/null; then
+	    sudo curl -L "https://raw.githubusercontent.com/avelino/aur/master/aur" -o /usr/local/bin/aur
+	    sudo chmod +x /usr/local/bin/aur
+	else
+	    echo "The package sudo is not installed"
+	fi
+	;;
     *)
-		$AUR $@
-		;;
+	shift
+	$AUR $@
+	;;
 esac
