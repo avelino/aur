@@ -30,6 +30,10 @@ case $1 in
 		shift
 		$AUR -R $@
 		;;
+    "info")
+		shift
+		$AUR -Si $@
+		;;
     *)
 		$AUR $@
 		;;

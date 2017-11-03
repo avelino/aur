@@ -27,6 +27,6 @@ Git Version:
 	aur search <PACKAGE>
 	aur install <PACKAGE>
 	aur remove <PACKAGE>
+	aur info <PACKAGE>
 	aur clear
 	aur list
-
