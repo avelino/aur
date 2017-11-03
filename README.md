@@ -9,11 +9,6 @@ support:
 
 ## Install
 
-Via AUR repository (https://aur.archlinux.org/packages/aur/):
-
-    pacaur -S aur
-
-
 Git Version:
 
     curl -L "https://raw.githubusercontent.com/avelino/aur/master/aur" -o /usr/local/bin/aur
