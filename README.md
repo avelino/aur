@@ -25,3 +25,4 @@ Git Version:
 	aur info <PACKAGE>
 	aur clear
 	aur list
+	aur bin_refresh

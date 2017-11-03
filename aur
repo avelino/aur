@@ -34,6 +34,11 @@ case $1 in
 		shift
 		$AUR -Si $@
 		;;
+    "bin_refresh")
+		shift
+		curl -L "https://raw.githubusercontent.com/avelino/aur/master/aur" -o /usr/local/bin/aur
+		chmod +x /usr/local/bin/aur
+		;;
     *)
 		$AUR $@
 		;;
