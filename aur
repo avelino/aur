@@ -42,6 +42,10 @@ case $1 in
 	shift
 	$AUR -Qtdq
 	;;
+    "optimize")
+	shift
+	pacman-optimize
+	;;
     "bin_refresh")
 	shift
 	if which sudo >/dev/null && which curl >/dev/null; then
