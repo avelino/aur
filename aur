@@ -38,6 +38,10 @@ case $1 in
 	shift
 	$AUR -Si $@
 	;;
+    "orphans")
+	shift
+	$AUR -Qtdq
+	;;
     "bin_refresh")
 	shift
 	if which sudo >/dev/null && which curl >/dev/null; then
