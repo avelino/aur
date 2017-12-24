@@ -46,13 +46,17 @@ case $1 in
 	shift
 	pacman-optimize
 	;;
+    "changelog")
+	shift
+	$AUR -Qc $@
+	;;
     "bin_refresh")
 	shift
 	if which sudo >/dev/null && which curl >/dev/null; then
 	    sudo curl -L "https://raw.githubusercontent.com/avelino/aur/master/aur" -o /usr/local/bin/aur
 	    sudo chmod +x /usr/local/bin/aur
 	else
-	    echo "The package sudo is not installed"
+	    echo "The package sudo or curl is not installed"
 	fi
 	;;
     *)
