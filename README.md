@@ -23,6 +23,7 @@ Git Version:
 	aur install <PACKAGE>
 	aur remove <PACKAGE>
 	aur info <PACKAGE>
+	aur changelog <PACKAGE>
 	aur clear
 	aur list
 	aur bin_refresh
