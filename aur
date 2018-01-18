@@ -46,6 +46,10 @@ case $1 in
 	shift
 	pacman-optimize
 	;;
+    "deps" | "dependencies")
+	shift
+	$AUR -Si $@ | awk -F'[:<=>]' '/^Depends/ {print $2}' | xargs -n1 | sort -u
+	;;
     "changelog")
 	shift
 	$AUR -Qc $@
