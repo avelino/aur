@@ -30,7 +30,7 @@ case $1 in
 	shift
 	$AUR -S $@
 	;;
-    "rm" | "remove" | "delete")
+    "rm" | "remove" | "delete" | "uninstall")
 	shift
 	$AUR -R $@
 	;;
