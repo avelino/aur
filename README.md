@@ -26,4 +26,15 @@ Git Version:
 	aur changelog <PACKAGE>
 	aur clear
 	aur list
+	aur orphans
+	aur deps
 	aur bin_refresh
+
+
+### Removing unused packages (orphans)
+
+For recursively removing orphans and their configuration files:
+
+```
+aur uninstall $(aur orphans)
+```
