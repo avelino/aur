@@ -44,7 +44,7 @@ case $1 in
 	;;
     "optimize")
 	shift
-	pacman-optimize
+	sudo pacman-optimize
 	;;
     "deps" | "dependencies")
 	shift
