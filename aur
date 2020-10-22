@@ -1,6 +1,8 @@
 #!/bin/bash
-VERSION=0.1.5
-if which pacaur >/dev/null; then
+VERSION=0.1.6
+if which yay >/dev/null; then
+    AUR="yay"
+elif which pacaur >/dev/null; then
     AUR="pacaur"
 else
     AUR="pacman"

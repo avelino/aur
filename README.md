@@ -5,6 +5,7 @@ support:
 
 - pacman
 - pacaur
+- yay
 
 
 ## Install
