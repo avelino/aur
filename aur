@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION=0.1.6
+VERSION=0.1.7
 if which yay >/dev/null; then
     AUR="yay"
 elif which pacaur >/dev/null; then
@@ -65,6 +65,12 @@ case $1 in
 	    echo "The package sudo or curl is not installed"
 	fi
 	;;
+    "install_bin")
+    shift
+    $AUR -S go && \
+        go get github.com/Jguer/yay && \
+        go install github.com/Jguer/yay
+    ;;
     *)
 	shift
 	$AUR $@
