@@ -1,8 +1,8 @@
-# Maintainer: Thiago Avelino <thiago@avelino.xxx>
+# Maintainer: Avelino <t@avelino.xxx>
 
 pkgname=aur
 _pkgver_maj=0.1
-pkgver=0.1.6
+pkgver=0.1.7
 pkgrel=1
 pkgdesc='ArchLinux Package Manager helper'
 arch=('x86_64')
