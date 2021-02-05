@@ -8,9 +8,9 @@ aur helper exists to create alias for the `pacman` parameters (and similar softw
 
 **support:**
 
-- pacman
-- pacaur
-- yay
+- [pacman](https://wiki.archlinux.org/index.php/pacman)
+- [pacaur](https://github.com/E5ten/pacaur)
+- [yay](https://github.com/Jguer/yay)
 
 
 ## Install
