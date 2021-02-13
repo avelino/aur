@@ -54,3 +54,15 @@ For recursively removing orphans and their configuration files:
 ```sh
 aur uninstall $(aur orphans)
 ```
+
+### Backup and recovery installed packages
+
+How to backup installed packages to an archive and install all packages from the archive created
+
+```sh
+# backup
+aur list > arch.packages
+
+# recovery
+aur install $(cat arch.packages)
+```
