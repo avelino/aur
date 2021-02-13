@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 VERSION=0.1.7
 if which yay >/dev/null; then
     AUR="yay"
