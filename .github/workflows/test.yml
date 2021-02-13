@@ -1,13 +1,13 @@
 name: test
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
     runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v1
-    - name: Install Archlinux
-      run: curl -L https://github.com/zaoqi/github-actions-archlinux/raw/master/install.sh | sh
-    - name: Testing Running
-      run: ./test_aur.sh
+    - uses: actions/checkout@v2.1.0
+    - uses: uraimo/run-on-arch-action@v2.0.5
+      name: Testing Running
+      with:
+        run: ./test_aur.sh
