@@ -7,13 +7,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2.1.0
-    - uses: uraimo/run-on-arch-action@v2.0.5
-      name: Active ArchLinux
+    - uses: pacman-repo-builder/action
+      name: Testing Running on ArchLinux
       with:
-        arch: armv7
-        distro: ubuntu18.04
-        run: |
-            uname -a
-            echo ::set-output name=uname::$(uname -a)
-    - name: Testing running
-      run: ./test_aur.sh
+        run: ./test_aur.sh
