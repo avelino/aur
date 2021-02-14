@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
+pacman --noconfirm -Ss curl
 source <(curl -s https://raw.githubusercontent.com/torokmark/assert.sh/master/assert.sh)
 
 PACKAGE_TEST_NAME="mosh"
 PACKAGE_TEST_DEPS="libutempter"
 
 # Install
-yes | ./aur install $PACKAGE_TEST_NAME
+./aur install --noconfirm $PACKAGE_TEST_NAME
 TEST_LIST_INSTALL=$(./aur list | grep $PACKAGE_TEST_NAME)
 assert_eq $TEST_LIST_INSTALL "$PACKAGE_TEST_NAME" "package ${PACKAGE_TEST_NAME} not find/installed!"
 
@@ -22,7 +23,7 @@ TEST_INFO=$(./aur info $PACKAGE_TEST_NAME)
 assert_contain $TEST_INFO $PACKAGE_TEST_NAME
 
 # Remove
-yes | ./aur remove $PACKAGE_TEST_NAME
+./aur remove --noconfirm $PACKAGE_TEST_NAME
 TEST_LIST_REMOVE=$(./aur list | grep $PACKAGE_TEST_NAME)
 assert_not_eq $TEST_LIST_REMOVE "$PACKAGE_TEST_NAME" "package ${PACKAGE_TEST_NAME} not removed!"
 assert_eq $TEST_LIST_REMOVE "" "package ${PACKAGE_TEST_NAME} exist!"
