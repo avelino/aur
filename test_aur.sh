@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-pacman --noconfirm -Ss curl
+pacman --noconfirm -Ss curl which base
 source <(curl -s https://raw.githubusercontent.com/torokmark/assert.sh/master/assert.sh)
 
 PACKAGE_TEST_NAME="mosh"
