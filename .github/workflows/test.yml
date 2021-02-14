@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2.1.0
-    - uses: pacman-repo-builder/action@0.0.0-rc.47
-      name: Testing Running on ArchLinux
+    - uses: addnab/docker-run-action@v1
       with:
-        command: ./test_aur.sh
+       image: archlinux:latest
+       run: ./test_aur.sh
