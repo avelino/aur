@@ -8,4 +8,7 @@ jobs:
     container: archlinux
     steps:
     - uses: actions/checkout@v2.1.0
-    - run: ./test_aur.sh
+    - name: Install Archlinux
+      run: curl -L https://github.com/zaoqi/github-actions-archlinux/raw/master/install.sh | sh
+    - name: Testing Running
+      run: ./test_aur.sh
