@@ -5,9 +5,7 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-18.04
+    container: archlinux
     steps:
     - uses: actions/checkout@v2.1.0
-    - uses: addnab/docker-run-action@v1
-      with:
-       image: archlinux:latest
-       run: ./test_aur.sh
+    - run: ./test_aur.sh
