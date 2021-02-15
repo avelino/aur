@@ -7,8 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2.1.0
+    - name: Install OS dependencies
+      run: |
+        sudo apt-get update && \
+        sudo apt-get upgrade -y
+        wget https://gitlab.com/TriVoxel/deb-pacman/uploads/9f716f95c66cd90e65157773d6dea05b/deb-pacman_1.0-0.deb
+        sudo apt-get install ./deb-pacman_1.0-0.deb
     - name: Testing Running
       run: |
         echo "Testing running"
-        apt-get update && apt-get upgrade -y && apt-get install -y pacman
         ./test_aur.sh

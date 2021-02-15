@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 pacman --noconfirm -Ssy curl which bash
 source <(curl -s https://raw.githubusercontent.com/torokmark/assert.sh/master/assert.sh)
 
