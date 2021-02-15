@@ -11,7 +11,7 @@ jobs:
       name: Testing Running
       with:
         image: archlinux
-        options: -v $(pwd):/github
+        options: -v '/home/runner/work:/github'
         run: |
           echo "Testing running"
           ls -l /github
