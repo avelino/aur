@@ -7,11 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2.1.0
-    - uses: addnab/docker-run-action@v1
-      name: Testing Running
-      with:
-        image: archlinux
-        run: |
-          echo "Testing running"
-          ls -l /home
-          /github/home/test_aur.sh
+    - name: Testing Running
+      run: |
+        echo "Testing running"
+        apt-get update && apt-get upgrade -y && apt-get install -y pacman
+        ./test_aur.sh
