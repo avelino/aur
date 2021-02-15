@@ -11,9 +11,7 @@ jobs:
       name: Testing Running
       with:
         image: archlinux
-        options: -v '/home/runner/work:/github'
         run: |
           echo "Testing running"
-          ls -l /github
-          ls -l /github/_temp/_github_home
+          ls -l /
           /github/home/test_aur.sh
