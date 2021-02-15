@@ -5,8 +5,11 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: archlinux
     steps:
     - uses: actions/checkout@v2.1.0
-    - name: Testing Running
-      run: ./test_aur.sh
+    - uses: addnab/docker-run-action@v1
+      name: Testing Running
+      with:
+        image: archlinux
+        options: -v $GITHUB_WORKSPACE:/work
+        run: /work/test_aur.sh
