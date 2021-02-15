@@ -13,5 +13,5 @@ jobs:
         image: archlinux
         run: |
           echo "Testing running"
-          ls -l /
+          ls -l /home
           /github/home/test_aur.sh
