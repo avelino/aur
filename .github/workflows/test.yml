@@ -11,5 +11,7 @@ jobs:
       name: Testing Running
       with:
         image: archlinux
-        options: -v $GITHUB_WORKSPACE:/work -e GITHUB_WORKSPACE=$GITHUB_WORKSPACE
-        run: $GITHUB_WORKSPACE/test_aur.sh
+        options: -v $GITHUB_WORKSPACE:/github
+        run: |
+          echo "Testing running"
+          /github/test_aur.sh
