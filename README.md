@@ -38,6 +38,7 @@ aur version
 - `install-bin` install [yay](https://github.com/Jguer/yay) software
 - `refresh-bin` upgrade `aur` bin
 - `refresh-keys` upgrade all gpg keys, used `sudo pacman-keys`
+- `clear-cache` clear all package cache folder, ex `/var/cache/pacman/pkg/`, `/var/lib/pacman/`, `/home/avelino/.cache/pacaur`, ...
 
 ### How to
 

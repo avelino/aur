@@ -68,13 +68,17 @@ case $1 in
     "install-bin")
         shift
         $AUR -S go && \
-	    go get github.com/Jguer/yay && \
-            go install github.com/Jguer/yay
-	;;
+        go get github.com/Jguer/yay && \
+        go install github.com/Jguer/yay
+    ;;
     "refresh-keys")
         shift
-	sudo pacman-key --refresh-keys
-	;;
+        sudo pacman-key --refresh-keys
+    ;;
+    "clear-cache")
+        shift
+        sudo pacman -Scc
+    ;;
     *)
 	shift
 	$AUR $@
