@@ -35,8 +35,9 @@ aur version
 - `list` list all softare installed
 - `orphans` list all orphan software installed
 - `deps` lists all software installation dependencies
-- `install_bin` install [yay](https://github.com/Jguer/yay) software
-- `bin_refresh` upgrade `aur` bin
+- `install-bin` install [yay](https://github.com/Jguer/yay) software
+- `refresh-bin` upgrade `aur` bin
+- `refresh-keys` upgrade all gpg keys, used `sudo pacman-keys`
 
 ### How to
 

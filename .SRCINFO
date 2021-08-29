@@ -1,6 +1,6 @@
 pkgbase = aur
 	pkgdesc = ArchLinux Package Manager Helper
-	pkgver = 0.1.7
+	pkgver = 0.1.8
 	pkgrel = 1
 	url = https://github.com/avelino/aur
 	arch = x86_64
