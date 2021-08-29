@@ -66,11 +66,11 @@ case $1 in
 	fi
 	;;
     "install_bin")
-    shift
-    $AUR -S go && \
-        go get github.com/Jguer/yay && \
-        go install github.com/Jguer/yay
-    ;;
+        shift
+        $AUR -S go && \
+	    go get github.com/Jguer/yay && \
+            go install github.com/Jguer/yay
+	;;
     *)
 	shift
 	$AUR $@
