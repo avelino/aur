@@ -56,7 +56,7 @@ case $1 in
 	shift
 	$AUR -Qc $@
 	;;
-    "bin_refresh")
+    "refresh-bin")
 	shift
 	if which sudo >/dev/null && which curl >/dev/null; then
 	    sudo curl -L "https://raw.githubusercontent.com/avelino/aur/master/aur" -o /usr/local/bin/aur
@@ -65,11 +65,15 @@ case $1 in
 	    echo "The package sudo or curl is not installed"
 	fi
 	;;
-    "install_bin")
+    "install-bin")
         shift
         $AUR -S go && \
 	    go get github.com/Jguer/yay && \
             go install github.com/Jguer/yay
+	;;
+    "refresh-keys")
+        shift
+	sudo pacman-key --refresh-keys
 	;;
     *)
 	shift
